@@ -44,11 +44,11 @@ end
 
 group :production do
   gem 'pg'
+  gem 'puma'
 end
 
 gem 'rails_12factor', group: :production
 
-ruby "2.1"
 # Use unicorn as the app server
 # gem 'unicorn'
 
