@@ -46,6 +46,9 @@ group :production do
   gem 'pg'
 end
 
+gem 'rails_12factor', group: :production
+
+ruby "2.0.0p247"
 # Use unicorn as the app server
 # gem 'unicorn'
 
