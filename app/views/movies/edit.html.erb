@@ -1,0 +1,22 @@
+
+<div class="uk-grid">
+  <div class="uk-width-1-2">
+     <div class="container-index uk-text-center">
+        <div class="uk-thumbnail uk-thumbnail-medium uk-container-center">
+          <%= link_to image_tag(@movie.image.to_s), movie_path(@movie) %>
+          <div class="caption">
+            <ul><%= @movie.title %> (<%= link_to "edit", edit_movie_path(@movie) %>, <%= link_to "delete", movie_path(@movie), method: :delete, confirm: "You sure?" %>)</ul>
+            <ul> </ul>
+            <li>Release Date: <%= @movie.release_date %></li>
+            <ul> </ul>
+            <li>Director: <%= @movie.director %> | <%= @movie.runtime_in_minutes %> minutes</li>
+            <ul> </ul>>
+            <li>Description: <%= @movie.description %></li>
+          </div>
+        </div>
+      </div>
+    </div>
+  <div class="uk-width-1-2">
+    <%= render 'form' %>
+  </div>
+</div>

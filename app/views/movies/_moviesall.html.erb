@@ -1,0 +1,18 @@
+
+<div class="uk-grid">
+<% @movies.each do |movie| %>
+    <div class="uk-width-1-2 uk-display-inline-block uk-text-center"> 
+      <div class="container-index">
+        <div class="uk-thumbnail uk-thumbnail-medium uk-container-center">
+          <%= link_to image_tag(movie.image.to_s), movie_path(movie) %>
+          <div class="caption">
+            <li><%= link_to movie.title, movie_path(movie) %></li>
+            <li>Release Date: <%= movie.release_date %></li>
+            <li>Director: <%= movie.director %> | <%= movie.runtime_in_minutes %> minutes</li>
+            <li>Description: <%= movie.description %></li>
+          </div>
+          </div>
+        </div>
+    </div>
+    <% end %>
+</div>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RottenMangoes</title>
+        <link href='http://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <link rel= "stylesheet" href ="/css/uikit.min2.css" />
+        <script src="/js/uikit.min.js"></script>
+</head>
+<body>
+
+  <nav class="uk-navbar">
+    <ul class="uk-navbar-nav">
+      <h1 class="uk-heading-large"><%= link_to "Rotten Mangoes", movies_path %></h1>
+    
+        <li class="login-check" id="login-checker">
+          <% if current_user %>
+            <% if current_user.admin? %>
+              Signed in as <%= current_user.full_name %> (<%= link_to "Log out", logout_path, :method => "delete" %>)
+              View <%= current_user.full_name %> (<%= link_to "User Management",
+                admin_users_path %>)
+            <% elsif !current_user.admin? %>
+              Signed in as <%= current_user.full_name %> (<%= link_to "Log out", logout_path, :method => "delete" %>)
+            <% end %>
+          <% else %>
+              <%= link_to "Log In", new_sessions_path %> | <%= link_to "Sign Up", new_user_path %>
+          <% end %>
+        </li>
+     
+        <li class="uk-active" id="submit_button">
+          <%= link_to "Submit a movie!", new_movie_path %><%= form_tag search_path, :method => 'get' do %>
+        </li>
+       
+        <div class="uk-navbar-content"> 
+          <%= text_field_tag :search, params[:search] %>
+          
+          <a href="#"> 
+            
+            <%= submit_tag "Search", :name => nil, class: "uk-button" %>
+          </a> 
+        </div>
+      <% end %>
+    </ul>
+  </nav>
+
+    <% flash.each do |key, value| %>
+      <%= content_tag(:div, value) %>
+    <% end %>
+    <%= yield %>
+    <%= render 'layouts/footer' %>
+</body>
+  
+</html>
