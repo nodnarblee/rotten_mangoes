@@ -38,13 +38,15 @@ gem 'kaminari'
 gem 'bootstrap-sass', '~> 3.3.0'
 gem 'uikitrails', '~> 0.1'
 
+gem 'pg'
+gem 'puma'
+
 group :development, :test do
   gem 'sqlite3'
 end
 
 group :production do
-  gem 'pg'
-  gem 'puma'
+
 end
 
 gem 'rails_12factor', group: :production
