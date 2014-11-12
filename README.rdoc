@@ -1,4 +1,7 @@
 
+===READ ME
+
+
 Welcome to my Rotten Mangoes App - A movie aggregator where you can upload and review movies. 
 
 LOGIN: 
