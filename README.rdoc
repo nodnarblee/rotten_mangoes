@@ -4,6 +4,8 @@
 
 Welcome to my Rotten Mangoes App - A movie aggregator where you can upload and review movies. 
 
+http://rottenmangoessss.herokuapp.com/movies
+
 LOGIN: 
 Email: admin@admin.com
 Password: admin
